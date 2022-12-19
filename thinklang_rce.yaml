@@ -1,0 +1,22 @@
+id: think_lang_rce
+
+info:
+  name: ThinkPHP peacmd.php RCE
+  author: microsoftsec
+  severity: high
+  description: If Thinkphp enables the multilingual function, you can pass in parameters such as get, header, and cookie to achieve directory traversal and file inclusion, and then include the Peacmd.php file for RCE.
+  reference:
+    - https://tttang.com/archive/1865/
+  tags: thinkphp
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/?lang=../../../../../public/index"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 500
+
