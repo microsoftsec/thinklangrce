@@ -10,4 +10,4 @@ thinkphp6 think_lang rce
 
 # warning
 
-Do not add the rce code in the poc of the nucleus. It is very dangerous！
+It is idiotic to write files directly on other people's servers!😄
